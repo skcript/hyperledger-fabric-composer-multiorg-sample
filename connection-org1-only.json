@@ -1,0 +1,34 @@
+{
+    "name": "byfn-network-org1-only",
+    "type": "hlfv1",
+    "mspID": "Org1MSP",
+    "peers": [
+        {
+            "requestURL": "grpcs://localhost:7051",
+            "eventURL": "grpcs://localhost:7053",
+            "cert": "crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt",
+            "hostnameOverride": "peer0.org1.example.com"
+        },
+        {
+            "requestURL": "grpcs://localhost:8051",
+            "eventURL": "grpcs://localhost:8053",
+            "cert": "crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt",
+            "hostnameOverride": "peer1.org1.example.com"
+        }
+    ],
+    "ca": {
+        "url": "https://localhost:7054",
+        "name": "ca-org1",
+        "cert": "crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt",
+        "hostnameOverride": "ca.org1.example.com"
+    },
+    "orderers": [
+        {
+            "url" : "grpcs://localhost:7050",
+            "cert": "crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/ca.crt",
+            "hostnameOverride": "orderer.example.com"
+        }
+    ],
+    "channel": "mychannel",
+    "timeout": 300
+}

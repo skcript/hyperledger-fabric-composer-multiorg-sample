@@ -1,0 +1,44 @@
+{
+    "name": "byfn-network-org2",
+    "type": "hlfv1",
+    "mspID": "Org2MSP",
+    "peers": [
+        {
+            "requestURL": "grpcs://localhost:9051",
+            "eventURL": "grpcs://localhost:9053",
+            "cert": "crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt",
+            "hostnameOverride": "peer0.org2.example.com"
+        },
+        {
+            "requestURL": "grpcs://localhost:10051",
+            "eventURL": "grpcs://localhost:10053",
+            "cert": "crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt",
+            "hostnameOverride": "peer1.org2.example.com"
+        },
+        {
+            "requestURL": "grpcs://localhost:7051",
+            "cert": "crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt",
+            "hostnameOverride": "peer0.org1.example.com"
+        },
+        {
+            "requestURL": "grpcs://localhost:8051",
+            "cert": "crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt",
+            "hostnameOverride": "peer1.org1.example.com"
+        }
+    ],
+    "ca": {
+        "url": "https://localhost:8054",
+        "name": "ca-org2",
+        "cert": "crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt",
+        "hostnameOverride": "ca.org2.example.com"
+    },
+    "orderers": [
+        {
+            "url" : "grpcs://localhost:7050",
+            "cert": "crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/ca.crt",
+            "hostnameOverride": "orderer.example.com"
+        }
+    ],
+    "channel": "mychannel",
+    "timeout": 300
+}
