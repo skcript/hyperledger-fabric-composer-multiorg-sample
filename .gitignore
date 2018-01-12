@@ -1,2 +1,6 @@
 docker-compose-e2e.yaml
 docker-compose-cas.yaml
+*.card
+*.bna
+*.log
+**/composer-logs/*
